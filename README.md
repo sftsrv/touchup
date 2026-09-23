@@ -2,6 +2,14 @@
 
 A little pipe for editing files with your `$EDITOR`
 
+## Installation
+
+Install the application using `go install` as follows:
+
+```sh
+go install github.com/sftsrv/touchup
+```
+
 ## Usage
 
 You can use the `--help` flag to view usage information:
