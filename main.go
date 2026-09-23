@@ -6,12 +6,12 @@ import (
 	"io"
 	"os"
 
-	"github.com/sftsrv/touchup/lib"
+	"github.com/sftsrv/touchup/pkg"
 )
 
 const usage = `touchup
 
-A pipe for passing files to your $EDITOR without manually creating intermediate files
+A little pipe for editing files with your $EDITOR
 
 ## Usage
 
@@ -32,7 +32,7 @@ It will take in the content of the input file and print out the result of editin
 `
 
 func main() {
-	defaultEditor, err := lib.GetDefaultEditor()
+	defaultEditor, err := pkg.GetDefaultEditor()
 
 	helpFlag := flag.Bool("help", false, "show usage info")
 	editorFlag := flag.String("editor", defaultEditor, "editor to edit file paths with")
@@ -56,7 +56,7 @@ func main() {
 		panic(err)
 	}
 
-	output, err := lib.EditFile(*editorFlag, *prefixFlag, *extFlag, string(input))
+	output, err := pkg.EditFile(*editorFlag, *prefixFlag, *extFlag, string(input))
 	if err != nil {
 		panic(err)
 	}
