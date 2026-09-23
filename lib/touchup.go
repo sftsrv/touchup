@@ -17,7 +17,7 @@ func GetDefaultEditor() (string, error) {
 }
 
 func EditFile(editor string, prefix string, ext string, content string) (string, error) {
-	file, err := os.CreateTemp(os.TempDir(), prefix+"*."+ext)
+	file, err := os.CreateTemp(os.TempDir(), prefix+"_*."+ext)
 	if err != nil {
 		return content, err
 	}
