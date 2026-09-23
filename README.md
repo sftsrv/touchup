@@ -1,20 +1,20 @@
-touchup
+# touchup
 
-A pipe for passing files to your `$EDITOR` without manually creating intermediate files
+A little pipe for editing files with your `$EDITOR`
 
 ## Usage
 
-You can use the '--help' flag to view usage information:
+You can use the `--help` flag to view usage information:
 
-'''sh
+```sh
 touchup --help
-'''
+```
 
-'touchup' can be used to interactively edit some text content via your configured `$EDITOR`
+`touchup` can be used to interactively edit some text content via your configured `$EDITOR`
 
-'''sh
+```sh
 cat my-file.txt | touchup
-'''
+```
 
 It will take in the content of the input file and print out the result of editing the file
 
